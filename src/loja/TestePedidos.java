@@ -5,6 +5,7 @@ import java.util.Arrays;
 
 import loja.pedido.GeraPedido;
 import loja.pedido.GeraPedidoHandler;
+import loja.pedido.LogDePedido;
 import loja.pedido.acao.EnviarEmailPedido;
 import loja.pedido.acao.SalvarPedidoBancoDeDados;
 
@@ -16,7 +17,7 @@ public class TestePedidos {
 		
 		GeraPedido pedido = new GeraPedido(cliente, valorOrcamento, qtItens);
 		GeraPedidoHandler handler = new GeraPedidoHandler(
-				Arrays.asList(new SalvarPedidoBancoDeDados(), new EnviarEmailPedido()));
+				Arrays.asList(new SalvarPedidoBancoDeDados(), new EnviarEmailPedido(), new LogDePedido()));
 		handler.execute(pedido);
 	}	
 }
